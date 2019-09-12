@@ -1,0 +1,33 @@
+{
+  "name": "jb-studio-gae",
+  "version": "0.5.0",
+  "description": "jbart studio on GAE",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "gcloud app deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtwareSoft/jb-studio-GAE.git"
+  },
+  "engines": {
+    "node": ">=11.0.0",
+    "npm": ">=4.0.0"
+  },
+  "keywords": [
+    "jbart5",
+    "gae",
+    "studio"
+  ],
+  "author": "Shai Ben-Yehuda <shaiby@artwaresoft.com> (http://artwaresoft.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtwareSoft/jb-studio-GAE/issues"
+  },
+  "homepage": "https://github.com/ArtwareSoft/jb-studio-GAE#readme",
+  "dependencies": {
+    "@google-cloud/storage": "^3.2.1",
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="//jbartlib.appspot.com/images/studio/favicon.png" />
+    <title>jBart</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+      var uri = decodeURI(location.href);
+      if (uri.indexOf('"ids":["') != -1) {
+        var id = uri.split('"ids":["')[1].split('"')[0];
+        window.location.href = encodeURI('?id=' + id);
+      }
+    </script>
+    <script type="text/javascript" src="//unpkg.com/jbart5-react/bin/studio/studio-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="//unpkg.com/jbart5-react/bin/studio/css/studio-all.css"/>
+    <link rel="stylesheet" type="text/css" href="//unpkg.com/jbart5-react/dist/material.css"/>
+    <link rel="stylesheet" type="text/css" href="//unpkg.com/jbart5-react/dist/material.indigo-pink.min.css"/>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>       
+    <script type="text/javascript" src="//storage.cloud.google.com/jbart5-lib/googledrive.js"></script>
+    <script type="text/javascript" src="//storage.cloud.google.com/jbart5-lib/jbart5_gdrive.js"></script>
+  </head>
+
+  <body style="background-image: url(//docs.google.com/uc?id=1qNpbha6OSks11h_ntPQIy0Jr7S-sFw8K)">
+    <div id="studio" style="background-color: white;width:1280px; margin-left: 2px"> </div>
+    <script>
+        jb_gae.init().then(() => {
+            jb_gae.loadStudio()
+            openGoogleDriveDoc()
+        }).catch(e => {
+            jb_gae.loadStudio()
+        })
+    </script>
+  </body>
+</html>

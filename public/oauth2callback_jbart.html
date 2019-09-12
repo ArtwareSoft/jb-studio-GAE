@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <script>
+	    let newUrl = 'https://jbart5.appspot.com/studio.html';
+	    let stateParam = location.hash.match(/state=(.+?)(\?|&|$)/);
+	    let state = '',isNewDoc=false;
+	    if (stateParam && stateParam[1]) {
+		    const authState = decodeURIComponent( stateParam[1] );
+	    	state = authState.split('&')[0];
+	    	isNewDoc = authState.split('&')[1];
+	    }
+	    const params = [];
+	    if (state) params.push('id='+encodeURIComponent(state));
+	    if (isNewDoc == 'newdocument=true') params.push('newdocument=true');
+	    if (params.length)
+	    	newUrl += '?'+params.join('&');
+	    
+	    window.location.href = newUrl;
+    </script>
+</html>
